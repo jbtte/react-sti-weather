@@ -24,7 +24,7 @@ useEffect(() =>{
 
 const weekDay = (timestamp) => {
   console.log(timestamp)
-  return new Date(timestamp).toLocaleDateString('pt-br', { weekday: 'long' })
+  return new Date(timestamp*1000).toLocaleDateString('pt-br', { weekday: 'long' })
 }
 
 const handleCityClose = () =>{
@@ -34,7 +34,7 @@ const handleCityClose = () =>{
 
 const cardForecast = (cityObject) =>{
   return (
-    <Card className="mx-auto text-dark forecast-card-bg p-3 pl-5 col-md-7 col-sm-12">
+    <Card className="mx-md-auto text-dark forecast-card-bg p-3 pl-5 col-md-7 col-sm-12">
       <Card.Body>
       <Card.Subtitle className="mb-3 text-muted text-left city-card-sm d-flex justify-content-between">
         <div>{cityObject.location.name} - {cityObject.location.region}</div>
@@ -67,8 +67,7 @@ const cardForecast = (cityObject) =>{
               <div> 
                 <div className='mb-1'>{weekDay(day.date_epoch)}</div>
                 <div className='city-card-dark-orange'>
-                  {Math.trunc(day.day.mintemp_c)}º  {' '}  
-                  {Math.trunc(day.day.maxtemp_c)}º
+                  {`${Math.trunc(day.day.mintemp_c)}º ${Math.trunc(day.day.maxtemp_c)}º`} 
                   </div>
               </div>
             )

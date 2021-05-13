@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table'
 import useFetch from './useFetch'
 import Loader from './Loader'
+import {  BrowserView,  MobileView } from "react-device-detect";
 
 export default function Capitals ({setSelectedCity}) {
   const [ capitalsObject, setCapitalsObject ] = useState({})
@@ -50,14 +51,22 @@ export default function Capitals ({setSelectedCity}) {
   return (<div>
     <h2 className="text-left pl-5">Capitais</h2>
     <div className="capitals">
-      <div className="capitals-table d-md-flex justify-content-around">
-        <div className="capitals-table-left">
-          {Object.keys(capitalsObject).length > 9 ? tableTemplate(leftCities) : <Loader />}
-        </div>
-        <div className="capitals-table-right">
-          {Object.keys(capitalsObject).length > 9 ? tableTemplate(rightCities):  <Loader />}
-        </div>
+        <BrowserView>
+          <div className="capitals-table d-md-flex justify-content-around">
+            <div className="capitals-table-left">
+              {Object.keys(capitalsObject).length > 9 ? tableTemplate(leftCities) : <Loader />}
+            </div>
+          <div className="capitals-table-right">
+            {Object.keys(capitalsObject).length > 9 ? tableTemplate(rightCities):  <Loader />}
+          </div>
       </div>
+        </BrowserView>
+        <MobileView>
+          <h1>Corinthians</h1>
+        <div className="capitals-table col-12">
+        {Object.keys(capitalsObject).length > 9 ? tableTemplate([...leftCities, ...rightCities]) : <Loader />}
+        </div>
+        </MobileView>
     </div>
   </div>
   )
