@@ -10,7 +10,11 @@
   color: white;
 }
 
-hr {
+h1 {
+  font-size: 56px;
+}
+
+.main-white {
   background-color: white !important;
 }
 
@@ -22,6 +26,39 @@ hr {
   color: rgb(120, 120, 120)
 }
 
-h1 {
-  font-size: 56px;
+.capitals-table th {
+  font-size: 10px;
+}
+
+.capitals-table td {
+  font-size: 14px;
+  padding: 4px;
+}
+
+.capitals-table img {
+  height: 30px;
+}
+
+.city-card-lg{
+  font-size: 36px;
+}
+
+.city-card-sm{
+  font-size: 12px;
+}
+
+.city-card-orange{
+  background: #fcc588;
+}
+
+.city-card-dark-orange{
+  color: #ed881d;
+}
+
+.forecast-card-bg{
+  background-color: #fef3e4;
+}
+
+tr:hover{
+  cursor: pointer;
 }
