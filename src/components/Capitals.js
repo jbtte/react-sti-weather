@@ -6,7 +6,7 @@ import {  BrowserView,  MobileView } from "react-device-detect";
 
 export default function Capitals ({setSelectedCity}) {
   const [ capitalsObject, setCapitalsObject ] = useState({})
-  const { get } = useFetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&aqi=no&q=`)
+  const { get } = useFetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&aqi=no&q=`)
   const leftCities = ['Rio de Janeiro', 'Sao Paulo', 'Belo Horizonte', 'Brasilia', 'Belem']
   const rightCities = ['Salvador', 'Curitiba', 'Fortaleza', 'Manaus', 'João Pessoa']
 

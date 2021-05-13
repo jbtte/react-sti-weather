@@ -8,7 +8,7 @@ import { faArrowUp,  faArrowDown, faTimes } from '@fortawesome/free-solid-svg-ic
 export default function City ({selectedCity, setSelectedCity}) {
 const [cityObject, setCityObject] = useState({})
 const[load, setLoad] = useState(false)
-const { get } = useFetch(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&days=7&aqi=no&alerts=no&q=`)
+const { get } = useFetch(`https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&days=7&aqi=no&alerts=no&q=`)
 
 useEffect(() =>{
   if(selectedCity){
