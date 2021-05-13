@@ -16,7 +16,6 @@ useEffect(() =>{
     .then(data =>{ 
     setCityObject(data)
     setLoad(true)
-    console.log(data)
   })
     .catch( e=> console.log(e))
   }

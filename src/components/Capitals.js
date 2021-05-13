@@ -14,7 +14,6 @@ export default function Capitals ({setSelectedCity}) {
     [...leftCities, ...rightCities].forEach(city=>{
       get(city)
     .then(data => {
-      //const city = data.location.name
       const cityData = {[city]:data.current}
       setCapitalsObject(prevState => ({...prevState, ...cityData}))
     })
@@ -26,6 +25,7 @@ export default function Capitals ({setSelectedCity}) {
     if (Object.keys(capitalsObject).length < 9) {
       return null
     }
+    
     return (
       <Table  hover borderless>
         <thead>
@@ -36,8 +36,8 @@ export default function Capitals ({setSelectedCity}) {
           </tr>
         </thead>
         <tbody>
-          {cities.map(city => {
-         return ( <tr onClick={()=>setSelectedCity(city)}>
+          {cities.map((city, i) => {
+         return ( <tr onClick={()=>setSelectedCity(city)} key={i}>
             <td><img src={capitalsObject[city].condition.icon} alt={capitalsObject[city].condition.text} /></td>
             <td>{capitalsObject[city].temp_c}º C</td>
             <td className="text-left">{city}</td>
@@ -62,7 +62,6 @@ export default function Capitals ({setSelectedCity}) {
       </div>
         </BrowserView>
         <MobileView>
-          <h1>Corinthians</h1>
         <div className="capitals-table col-12">
         {Object.keys(capitalsObject).length > 9 ? tableTemplate([...leftCities, ...rightCities]) : <Loader />}
         </div>

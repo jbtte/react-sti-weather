@@ -10,7 +10,7 @@ function App() {
  
   return (
     <div className="App">
-      <main className="col-sm-12 col-md-6 mx-auto">
+      <main className="col-sm-12 col-lg-6 mx-auto">
         <h1 className="mb-5">Previsão do tempo</h1>
         <City setSelectedCity={setSelectedCity} selectedCity={selectedCity} />
         <hr className="my-5 main-white"/>

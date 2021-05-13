@@ -14,6 +14,11 @@ h1 {
   font-size: 56px;
 }
 
+main {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .main-white {
   background-color: white !important;
 }
