@@ -1,7 +1,8 @@
 # The Weather Channel
 ## About
 This webapp was developed as a weather app. 
-It is based on a open source [challenge for Sti](https://github.com/1STi/desafio-frontend/)
+
+It is based on an open source [challenge for Sti](https://github.com/1STi/desafio-frontend/)
 
 ![Netlify](https://img.shields.io/netlify/ef854091-db7a-47c5-bfe0-f21f311d6ce4)
 ![GitHub](https://img.shields.io/github/license/jbtte/react-sti-weather)
